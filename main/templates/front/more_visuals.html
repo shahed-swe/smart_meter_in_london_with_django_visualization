@@ -1,0 +1,110 @@
+{%extends 'base.html'%}
+<!-- extended -->
+{%load static%}
+<!-- static file loaded -->
+{%block main_content%}
+<!--  -->
+<style>
+    .themed-background {
+        background-color: white;
+    }
+    
+    .widget-content-light strong {
+        color: black;
+    }
+    
+    .chart {
+        height: 430px;
+    }
+    
+    .another-chart {
+        height: 865px;
+    }
+</style>
+<div class="block full">
+    <!-- eShop Overview Title -->
+    <div class="block-title">
+        <h2><strong>Visual</strong> Overview</h2>
+    </div>
+    <!-- END eShop Overview Title -->
+
+    <!-- eShop Overview Content -->
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Large Widget (Active Color Theme Light) -->
+            <div class="widget">
+                <div class="widget-advanced widget-advanced-alt">
+                    <!-- Widget Header -->
+                    <div class="widget-header text-center themed-background">
+                        <h3 class="widget-content-light text-left pull-left animation-pullDown">
+                            <strong>{{energy_user_title}}</strong><br>
+                            <small>2013</small>
+                        </h3>
+                        <!-- Flot Charts (initialized in js/pages/widgetsStats.js), for more examples you can check out http://www.flotcharts.org/ -->
+                        <div id="chart-widget1" class="chart" style="padding: 0px; position: relative;">
+                            <img src="data:image/png;base64, {{energy_used|safe}}" alt="" style="height: 369px;width: 1618px;">
+                        </div>
+                    </div>
+                    <!-- END Widget Header -->
+
+                    <!-- Widget Main -->
+                    <!-- END Widget Main -->
+                </div>
+            </div>
+            <!-- END Large Widget (Active Color Theme Light) -->
+        </div>
+        <div class="col-md-12">
+            <!-- Large Widget (Active Color Theme Light) -->
+            <div class="widget">
+                <div class="widget-advanced widget-advanced-alt">
+                    <!-- Widget Header -->
+                    <div class="widget-header text-center themed-background">
+                        <h3 class="widget-content-light text-left pull-left animation-pullDown">
+                            <strong>{{heat_map_title}}</strong><br>
+                            <small>2013</small>
+                        </h3>
+                        <!-- Flot Charts (initialized in js/pages/widgetsStats.js), for more examples you can check out http://www.flotcharts.org/ -->
+                        <div id="chart-widget1" class="chart another-chart" style="padding: 0px; position: relative;">
+                            <img src="data:image/png;base64, {{head_map|safe}}" alt="" style="height: 725px;width: 1618px;">
+                        </div>
+                    </div>
+                    <!-- END Widget Header -->
+
+                    <!-- Widget Main -->
+                    <!-- END Widget Main -->
+                </div>
+            </div>
+            <!-- END Large Widget (Active Color Theme Light) -->
+        </div>
+        <div class="col-md-12">
+            <!-- Large Widget (Active Color Theme Light) -->
+            <div class="widget">
+                <div class="widget-advanced widget-advanced-alt">
+                    <!-- Widget Header -->
+                    <div class="widget-header text-center themed-background">
+                        <h3 class="widget-content-light text-left pull-left animation-pullDown">
+                            <strong>{{date_and_energy_title}}</strong><br>
+                            <small>2013</small>
+                        </h3>
+                        <!-- Flot Charts (initialized in js/pages/widgetsStats.js), for more examples you can check out http://www.flotcharts.org/ -->
+                        <div id="chart-widget1" class="chart" style="padding: 0px; position: relative;">
+                            <img src="data:image/png;base64, {{date_and_energy|safe}}" alt="" style="height: 369px;width: 1618px;">
+                        </div>
+                    </div>
+                    <!-- END Widget Header -->
+
+                    <!-- Widget Main -->
+                    <!-- END Widget Main -->
+                </div>
+            </div>
+            <!-- END Large Widget (Active Color Theme Light) -->
+        </div>
+    </div>
+    <!-- END eShop Overview Content -->
+</div>
+<!-- END eShop Overview Block -->
+
+<!-- Orders and Products -->
+<!-- END Orders and Products -->
+<!--  -->
+{%endblock main_content%}

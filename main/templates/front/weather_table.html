@@ -1,0 +1,69 @@
+{%extends 'base.html'%}
+<!-- extended -->
+{%load static%}
+<!-- static file loaded -->
+{%block main_content%}
+<!--  -->
+<style>
+    .themed-background {
+        background-color: white;
+    }
+    
+    .widget-content-light strong {
+        color: black;
+    }
+    
+    .chart {
+        height: 430px;
+    }
+    
+    .another-chart {
+        height: 865px;
+    }
+</style>
+<div class="block full">
+    <!-- eShop Overview Title -->
+    <div class="block-title">
+        <h2><strong>Data</strong> Overview</h2>
+    </div>
+    <!-- END eShop Overview Title -->
+
+    <!-- eShop Overview Content -->
+    <div class="block full">
+        <div class="block-title">
+            <h2><strong>Weather</strong> Data Information</h2>
+        </div>
+        <div class="table-responsive">
+            {{data_table | safe}}
+        </div>
+    </div>
+</div>
+<!-- END eShop Overview Content -->
+</div>
+
+<!-- END eShop Overview Block -->
+
+<!-- Orders and Products -->
+<!-- END Orders and Products -->
+<!--  -->
+{%endblock main_content%} {%block main_script%}
+<!-- scripts -->
+<script>
+    $(function() {
+        $("table").addClass("table")
+        $("table").addClass("table-vcenter ")
+        $("table").addClass("table-condensed")
+        $("table").addClass("table-bordered")
+        $("table").addClass("dataTable")
+        $("table").addClass("no-footer")
+            // text-center sorting_asc
+        $("th").addClass("text-center")
+        $("th").addClass("sorting_asc")
+        $("td").addClass("sorting_asc")
+        $("td").addClass("sorting_asc")
+
+
+    })
+</script>
+<!--  -->
+{%endblock main_script%}

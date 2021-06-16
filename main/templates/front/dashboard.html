@@ -1,0 +1,88 @@
+{%extends 'base.html'%}
+<!-- extended -->
+{%load static%}
+<!-- static file loaded -->
+{%block main_content%}
+<!--  -->
+<!-- eCommerce Dashboard Header -->
+
+<!-- END eCommerce Dashboard Header -->
+
+<!-- Quick Stats -->
+<div class="row text-center">
+    <div class="col-sm-6 col-lg-3">
+        <a href="javascript:void(0)" class="widget widget-hover-effect2">
+            <div class="widget-extra themed-background">
+                <h4 class="widget-content-light"><strong>Total</strong> Data</h4>
+            </div>
+            <div class="widget-extra-full"><span class="h2 animation-expandOpen">{{total_energy_data}}</span></div>
+        </a>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <a href="javascript:void(0)" class="widget widget-hover-effect2">
+            <div class="widget-extra themed-background-dark">
+                <h4 class="widget-content-light"><strong>Total Number of</strong> House</h4>
+            </div>
+            <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">{{total_no_of_house}}</span></div>
+        </a>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <a href="javascript:void(0)" class="widget widget-hover-effect2">
+            <div class="widget-extra themed-background-dark">
+                <h4 class="widget-content-light"><strong>Minimum Energy User Per House</strong></h4>
+            </div>
+            <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">{{min_energy}}</span></div>
+        </a>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <a href="javascript:void(0)" class="widget widget-hover-effect2">
+            <div class="widget-extra themed-background-dark">
+                <h4 class="widget-content-light"><strong>Maximum Energy Used Per House</strong></h4>
+            </div>
+            <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">{{max_energy}}</span></div>
+        </a>
+    </div>
+</div>
+<!-- END Quick Stats -->
+
+<!-- eShop Overview Block -->
+<div class="block full">
+    <!-- eShop Overview Title -->
+    <div class="block-title">
+        <h2><strong>Data</strong> Overview</h2>
+    </div>
+    <!-- END eShop Overview Title -->
+
+    <!-- eShop Overview Content -->
+    <div class="row">
+        <div class="col-md-6 col-lg-4">
+            <div class="row push">
+                <div class="col-xs-6">
+                    <h3><strong class="animation-fadeInQuick">{{min_date}}</strong><br><small class="text-uppercase animation-fadeInQuickInv"><a href="javascript:void(0)">Date Of Minimum Energy</a></small></h3>
+                </div>
+                <div class="col-xs-6">
+                    <h3><strong class="animation-fadeInQuick">{{max_date}}</strong><br><small class="text-uppercase animation-fadeInQuickInv"><a href="javascript:void(0)">Date Of Maximum Energy</a></small></h3>
+                </div>
+                <div class="col-xs-6">
+                    <h3><strong class="animation-fadeInQuick">{{min_average}}</strong><br><small class="text-uppercase animation-fadeInQuickInv"><a href="javascript:void(0)">Minimum Averate</a></small></h3>
+                </div>
+                <div class="col-xs-6">
+                    <h3><strong class="animation-fadeInQuick">{{max_average}}</strong><br><small class="text-uppercase animation-fadeInQuickInv"><a href="javascript:void(0)">Maximum Average</a></small></h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-8">
+            <!-- Flot Charts (initialized in js/pages/ecomDashboard.js), for more examples you can check out http://www.flotcharts.org/ -->
+            <div id="chart-overview" style="height: 350px; padding: 0px; position: relative;">
+                <img src="data:image/png;base64, {{housecountr_graph|safe}}" alt="" style="height: 370px; width: 1150px;">
+            </div>
+        </div>
+    </div>
+    <!-- END eShop Overview Content -->
+</div>
+<!-- END eShop Overview Block -->
+
+<!-- Orders and Products -->
+<!-- END Orders and Products -->
+<!--  -->
+{%endblock main_content%}
